@@ -267,7 +267,7 @@ body{
 .diagnostic{background:var(--gray-50)}
 .diag-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
 .diag-col{background:#fff;border-radius:18px;padding:40px 36px;border:1px solid var(--border)}
-.diag-col.pain{border-top:4px solid var(--warn)}
+.diag-col.pain{border-top:4px solid var(--blip-blue-deep)}
 .diag-col.opp{border-top:4px solid var(--blip-blue)}
 .diag-head{display:flex;align-items:center;gap:12px;margin-bottom:8px}
 .diag-icon{font-size:24px}
@@ -285,7 +285,7 @@ body{
   display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;
   margin-top:1px;
 }
-.diag-col.pain .mark{background:#FEECEC;color:var(--warn)}
+.diag-col.pain .mark{background:var(--blip-blue-light);color:var(--blip-blue-deep)}
 .diag-col.opp .mark{background:var(--blip-blue-light);color:var(--blip-blue)}
 @media(max-width:900px){
   .diag-grid{grid-template-columns:1fr}
@@ -580,7 +580,6 @@ footer .sources{max-width:840px;margin:20px auto 0;font-size:11px;color:rgba(255
     </div>
     <div class="nav-links">
       <a href="#blip">Sobre a Blip</a>
-      <a href="#momentum">Momento Algar</a>
       <a href="#diagnostic">Diagnóstico</a>
       <a href="#arch">Arquitetura</a>
       <a href="#usecases">Casos de uso</a>
@@ -676,114 +675,36 @@ footer .sources{max-width:840px;margin:20px auto 0;font-size:11px;color:rgba(255
   </div>
 </section>
 
-<!-- MOMENTUM ALGAR -->
-<section class="section momentum" id="momentum">
-  <div class="section-inner">
-    <div class="eyebrow">02 — Momento Algar</div>
-    <h2>Seis sinais convergem para uma <em>janela rara</em> de transformação conversacional.</h2>
-    <p class="section-lede">Mapeamos os eventos públicos da Algar nos últimos 180 dias e cruzamos com o que a equipe identificou na reunião técnica. A leitura é clara: nova liderança, IA já no DNA, portal B2B em construção e dores operacionais que casam exatamente com o que a Blip entrega.</p>
-
-    <div class="momentum-grid">
-      <div class="signals">
-        <div class="signal">
-          <div class="signal-head">
-            <span class="signal-tag">⚡ Troca de CEO</span>
-            <span class="signal-date">30 abr 2026</span>
-          </div>
-          <div class="signal-title">Nova presidente assume com foco em "cliente no centro" e eficiência operacional</div>
-          <div class="signal-source">Eliane Garcia Melgaço sucede Luiz Alexandre Garcia após processo de turnaround. Discurso explícito sobre CRM, Portal B2B e canais digitais. · <a href="https://teletime.com.br/30/04/2026/algar-nomeia-eliane-melgaco-como-nova-diretora-presidente/" target="_blank">TELETIME</a></div>
-        </div>
-
-        <div class="signal">
-          <div class="signal-head">
-            <span class="signal-tag">🚀 100 agentes de IA</span>
-            <span class="signal-date">9 mar 2026</span>
-          </div>
-          <div class="signal-title">Algar atinge meta de 100 robôs de IA — e quer "transformar em produto"</div>
-          <div class="signal-source">Diretora de Produtos e Tecnologia anuncia que IA interna agora vira solução para clientes. Base operacional madura, pronta para escalar via plataforma. · <a href="https://tiinside.com.br/09/03/2026/robos-de-ia-da-algar-automatizam-atendimento-diagnostico-de-rede-e-suporte-a-vendas/" target="_blank">TI Inside</a></div>
-        </div>
-
-        <div class="signal">
-          <div class="signal-head">
-            <span class="signal-tag">🧩 Portal B2B</span>
-            <span class="signal-date">14 abr 2026</span>
-          </div>
-          <div class="signal-title">Portal Empresas lançado com IA embarcada e roadmap de integrações até dez/26</div>
-          <div class="signal-source">40 mil usuários ativos, 234 mil serviços/mês em ~1 mês. Roadmap explícito de evoluções e integrações em curso — janela aberta para camada conversacional.· <a href="https://telesintese.com.br/algar-centraliza-atendimento-b2b-em-novo-portal-digital/" target="_blank">Tele.Síntese</a></div>
-        </div>
-
-        <div class="signal">
-          <div class="signal-head">
-            <span class="signal-tag">🌎 Hiperpersonalização</span>
-            <span class="signal-date">19 mai 2026</span>
-          </div>
-          <div class="signal-title">Presidente do conselho declara IA com regionalismos como vetor estratégico</div>
-          <div class="signal-source">No Painel Telebrasil 2026, Luiz Alexandre Garcia afirma que IA com hiperpersonalização regional é o caminho competitivo. Casa exatamente com o case Energisa. · <a href="https://teletime.com.br/19/05/2026/algar-aposta-em-hiperpersonalizacao-com-ia/" target="_blank">TELETIME</a></div>
-        </div>
-
-        <div class="signal">
-          <div class="signal-head">
-            <span class="signal-tag">📡 RCS já em operação</span>
-            <span class="signal-date">31 mar 2025</span>
-          </div>
-          <div class="signal-title">Algar entrega caso de RCS para cliente do setor financeiro</div>
-          <div class="signal-source">A Algar já oferece SMS, e-mail e agora RCS no portfólio. Camada de orquestração multicanal já é demanda concreta — espaço para Blip como plataforma integradora. · <a href="https://teletime.com.br/31/03/2025/infobip-e-algar-telecom-fecham-parceria-para-uso-de-rcs-no-setor-financeiro" target="_blank">TELETIME</a></div>
-        </div>
-
-        <div class="signal">
-          <div class="signal-head">
-            <span class="signal-tag">🛰️ MVNE Telco in a Box</span>
-            <span class="signal-date">7 mai 2026</span>
-          </div>
-          <div class="signal-title">Plataforma para ISPs virarem operadoras móveis — 14+ parceiros já credenciados</div>
-          <div class="signal-source">Ecossistema B2B2C nascente que vai demandar jornadas digitais de onboarding, suporte e engajamento — uma frente conversacional adicional. · <a href="https://inforchannel.com.br/2026/05/07/solucao-da-algar-capacita-isps-a-se-tornarem-operadoras-moveis-com-marca-propria/" target="_blank">Inforchannel</a></div>
-        </div>
-      </div>
-
-      <div class="window-card">
-        <div class="window-card-eyebrow">A janela é agora</div>
-        <h3>Sinais alinhados: liderança, plataforma, mercado e dor.</h3>
-        <p>É raro encontrar tantos vetores convergindo ao mesmo tempo numa conta. Nova CEO buscando vitórias rápidas. Portal B2B em construção. IA interna que precisa virar produto. E uma equipe técnica que já admite, em reunião, que a plataforma atual (ASC) não atende.</p>
-        <div class="tag-row">
-          <span class="window-tag">Próxima reunião técnica</span>
-          <span class="window-tag">Possível RFP no radar</span>
-          <span class="window-tag">Marketing também sondado</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- DIAGNOSTIC -->
 <section class="section diagnostic" id="diagnostic">
   <div class="section-inner">
-    <div class="eyebrow">03 — Diagnóstico</div>
-    <h2>Uma operação digital madura — mas <em>fragmentada</em> e ainda reativa.</h2>
-    <p class="section-lede">A Algar não está no zero: já tem app, Portal B2B, RCS em catálogo, agentes de IA internos e a Ana no WhatsApp B2B. O ponto de partida é privilegiado. Mas o que a equipe técnica enxergou na reunião — e o que a operação cotidiana revela — é uma jornada cortada em pedaços. É exatamente aí que orquestração faz diferença.</p>
+    <div class="eyebrow">02 — Diagnóstico</div>
+    <h2>Uma operação digital madura — pronta para o <em>próximo salto</em>.</h2>
+    <p class="section-lede">A Algar já está à frente: app próprio, Portal Empresas recém-lançado, RCS no portfólio, 100 agentes de IA em produção e a Ana atendendo no WhatsApp B2B. Essa base é um ativo. O próximo salto natural é conectar essas peças numa jornada única, orquestrada por IA — e é exatamente aí que a Blip soma.</p>
 
     <div class="diag-grid">
       <div class="diag-col pain">
         <div class="diag-head">
-          <span class="diag-icon">🔴</span>
-          <h3>Dores identificadas</h3>
+          <span class="diag-icon">🎯</span>
+          <h3>Onde podemos somar</h3>
         </div>
-        <div class="diag-sub">O que a reunião com TI da Algar trouxe à tona</div>
+        <div class="diag-sub">Frentes estratégicas identificadas no alinhamento técnico</div>
         <div class="diag-list">
-          <div class="diag-item"><span class="mark">!</span><span>Plataforma atual (ASC) com <strong>chatbot em loops infinitos</strong> e sem integração com sistemas internos</span></div>
-          <div class="diag-item"><span class="mark">!</span><span>SAC, cobrança e visita técnica em <strong>silos desconectados</strong> — cliente recomeça a cada contato</span></div>
-          <div class="diag-item"><span class="mark">!</span><span>Múltiplos números de WhatsApp <strong>inativos ou inconsistentes</strong>, prejudicando a comunicação</span></div>
-          <div class="diag-item"><span class="mark">!</span><span>Aplicativo próprio com <strong>baixa usabilidade</strong> (recuperação de senha, navegação) que não substitui o canal conversacional</span></div>
-          <div class="diag-item"><span class="mark">!</span><span>Comunicação de cobrança <strong>reativa</strong>, dependente do cliente buscar a Algar — alimenta inadimplência</span></div>
-          <div class="diag-item"><span class="mark">!</span><span>IA atual não entende <strong>regionalismos</strong> nem informações básicas (reagendamento, horário, status de técnico)</span></div>
+          <div class="diag-item"><span class="mark">›</span><span>Evoluir a plataforma de atendimento atual para uma <strong>camada de orquestração</strong> com IA agêntica</span></div>
+          <div class="diag-item"><span class="mark">›</span><span>Conectar <strong>SAC, cobrança e visita técnica</strong> numa jornada única, com contexto compartilhado entre etapas</span></div>
+          <div class="diag-item"><span class="mark">›</span><span>Consolidar a presença em WhatsApp num <strong>canal oficial único</strong>, com Marca Verificada e governança centralizada</span></div>
+          <div class="diag-item"><span class="mark">›</span><span>Complementar o app próprio com <strong>notificações ativas</strong> no canal preferido do cliente — não como substituição, como reforço</span></div>
+          <div class="diag-item"><span class="mark">›</span><span>Adicionar uma <strong>régua proativa de cobrança</strong> que dialoga com o cliente antes do vencimento</span></div>
+          <div class="diag-item"><span class="mark">›</span><span>Ampliar a IA para entender <strong>regionalismos</strong> dos estados onde a Algar atua — alinhado ao discurso público de hiperpersonalização</span></div>
         </div>
       </div>
 
       <div class="diag-col opp">
         <div class="diag-head">
           <span class="diag-icon">🔵</span>
-          <h3>Oportunidades com a Blip</h3>
+          <h3>O que a Blip traz</h3>
         </div>
-        <div class="diag-sub">Onde posicionamos a transformação estratégica</div>
+        <div class="diag-sub">Como posicionamos a transformação estratégica</div>
         <div class="diag-list">
           <div class="diag-item"><span class="mark">+</span><span><strong>Orquestração ponta a ponta</strong> da jornada — SAC, cobrança e campo no mesmo fio condutor</span></div>
           <div class="diag-item"><span class="mark">+</span><span>Agentes de IA <strong>contextuais e regionais</strong>, treinados com o vocabulário local da Algar</span></div>
@@ -800,7 +721,7 @@ footer .sources{max-width:840px;margin:20px auto 0;font-size:11px;color:rgba(255
 <!-- ARCHITECTURE -->
 <section class="section arch" id="arch">
   <div class="section-inner">
-    <div class="eyebrow">04 — Arquitetura</div>
+    <div class="eyebrow">03 — Arquitetura</div>
     <h2>O Blip Studio no centro. Os sistemas da Algar de um lado, os canais do outro.</h2>
     <p class="section-lede">Cada jornada vira um agente especializado, orquestrado pelo Blip Studio. Os sistemas que já sustentam a operação — billing, CRM, Portal Empresas, sistemas de campo — são acessados por uma camada única de integração. A saída acontece nos canais de relacionamento, com governança e segurança enterprise.</p>
 
@@ -860,7 +781,7 @@ footer .sources{max-width:840px;margin:20px auto 0;font-size:11px;color:rgba(255
 <!-- USE CASES -->
 <section class="section usecases" id="usecases">
   <div class="section-inner">
-    <div class="eyebrow">05 — Casos de uso aplicados à Algar</div>
+    <div class="eyebrow">04 — Casos de uso aplicados à Algar</div>
     <h2>Como a operação fica com <em>IA + WhatsApp</em> na camada estratégica.</h2>
     <p class="section-lede">Três frentes prioritárias, escolhidas a partir das dores que a equipe Algar já levantou: SAC inteligente que resolve, cobrança ativa que recupera e ordem de serviço que não trava. Cada uma com KPI mensurável e jornada conversacional aplicada ao dia a dia da Algar — não uma demo técnica.</p>
 
@@ -968,7 +889,7 @@ footer .sources{max-width:840px;margin:20px auto 0;font-size:11px;color:rgba(255
           <div class="uc-kpi"><div class="uc-kpi-num">PIX</div><div class="uc-kpi-label">instantâneo no chat · baixa automática integrada ao billing</div></div>
         </div>
         <ul class="uc-bullets">
-          <li><strong>Notificação proativa pré-vencimento:</strong> resolve a dor central que a equipe Algar identificou na reunião</li>
+          <li><strong>Notificação proativa pré-vencimento:</strong> antecipa a conversa em vez de esperar o cliente buscar a Algar</li>
           <li><strong>Negociação personalizada:</strong> a IA lê o histórico do cliente e propõe a melhor condição — bom pagador ganha desconto, cliente em risco ganha parcelamento</li>
           <li><strong>RCS para clientes premium:</strong> Marca Verificada Algar aumenta confiança e conversão em ofertas de retenção</li>
         </ul>
@@ -983,7 +904,7 @@ footer .sources{max-width:840px;margin:20px auto 0;font-size:11px;color:rgba(255
           <span class="uc-tag">Visita Técnica · Campo Orquestrado</span>
         </div>
         <h3>Da abertura ao reagendamento — sem o cliente nunca ter de ligar de novo.</h3>
-        <p>Daniela contou na reunião um caso real: técnico não compareceu, sistema não permitia reagendar, sem rastreamento. Esse é o ponto cego que a Blip resolve. O agente captura a ocorrência, agenda com geolocalização precisa, <strong style="color:#fff;font-weight:500">notifica o cliente quando o técnico sai e chega</strong>, permite reagendar pelo chat e fecha o ciclo com NPS. Inspirado no case Claro, adaptado para fibra.</p>
+        <p>O ponto cego clássico da operação de campo: cliente não sabe se o técnico vai chegar, sem rastreamento e sem caminho fácil de reagendar. A Blip resolve fechando o ciclo no canal: o agente captura a ocorrência, agenda com geolocalização precisa, <strong style="color:#fff;font-weight:500">notifica o cliente quando o técnico sai e chega</strong>, permite reagendar pelo chat e fecha com NPS. Inspirado no case Claro, adaptado para fibra.</p>
         <div class="uc-kpis">
           <div class="uc-kpi"><div class="uc-kpi-num">~80%</div><div class="uc-kpi-label">visitas evitadas com triagem por IA (foto + áudio) — benchmark TechSee</div></div>
           <div class="uc-kpi"><div class="uc-kpi-num">📍 + 📷</div><div class="uc-kpi-label">geolocalização precisa + leitura de imagem do equipamento</div></div>
@@ -992,7 +913,7 @@ footer .sources{max-width:840px;margin:20px auto 0;font-size:11px;color:rgba(255
         <ul class="uc-bullets">
           <li><strong>Diagnóstico remoto antes do truck:</strong> conecta com o TAOS da Algar e tenta a correção remota — só despacha técnico se não resolver</li>
           <li><strong>Rastreamento ao vivo do técnico:</strong> o cliente acompanha o deslocamento no WhatsApp — fim do "o técnico não veio"</li>
-          <li><strong>Reagendamento autônomo:</strong> dois toques no chat para remarcar — resolve a dor que a equipe identificou nos logs</li>
+          <li><strong>Reagendamento autônomo:</strong> dois toques no chat para remarcar — autonomia total para o cliente</li>
         </ul>
       </div>
       <div class="wa">
@@ -1008,7 +929,7 @@ footer .sources{max-width:840px;margin:20px auto 0;font-size:11px;color:rgba(255
           </div>
           <div class="wa-body">
             <div class="wa-day">HOJE · 08:48</div>
-            <div class="wa-msg bot"><span class="bot-tag">🤖 Algar · IA</span>Bom dia, Daniela! 👋<span class="wa-time">08:48</span></div>
+            <div class="wa-msg bot"><span class="bot-tag">🤖 Algar · IA</span>Bom dia, Carla! 👋<span class="wa-time">08:48</span></div>
             <div class="wa-msg bot"><span class="bot-tag">🤖 Algar · IA</span>Sua visita técnica está confirmada para <strong>hoje, entre 10h e 12h</strong>. 🛠️<span class="wa-time">08:48</span></div>
             <div class="wa-card">
               <div class="wa-card-title">🚐 Acompanhe seu técnico</div>
@@ -1018,7 +939,7 @@ footer .sources{max-width:840px;margin:20px auto 0;font-size:11px;color:rgba(255
             <div class="wa-btn">📍 Ver no mapa</div>
             <div class="wa-btn">🔄 Reagendar</div>
             <div class="wa-msg out">Reagendar 🔄<span class="wa-time">08:50 ✓✓</span></div>
-            <div class="wa-msg bot"><span class="bot-tag">🤖 Algar · IA</span>Sem problema, Daniela! Tenho estes horários disponíveis 👇<span class="wa-time">08:50</span></div>
+            <div class="wa-msg bot"><span class="bot-tag">🤖 Algar · IA</span>Sem problema, Carla! Tenho estes horários disponíveis 👇<span class="wa-time">08:50</span></div>
             <div class="wa-btn">📅 Amanhã · 09h às 11h</div>
             <div class="wa-btn">📅 Amanhã · 14h às 16h</div>
             <div class="wa-btn">📅 Sexta · 10h às 12h</div>
@@ -1036,7 +957,7 @@ footer .sources{max-width:840px;margin:20px auto 0;font-size:11px;color:rgba(255
 <!-- CASES -->
 <section class="section cases" id="cases">
   <div class="section-inner">
-    <div class="eyebrow">06 — Já fazemos isso</div>
+    <div class="eyebrow">05 — Já fazemos isso</div>
     <h2>Os mesmos desafios da Algar, <em>já resolvidos</em> em operações comparáveis.</h2>
     <p class="section-lede">Telecom e utilities de grande porte, com base massiva, cobrança complexa, operação de campo e múltiplos canais. Três cases públicos que demonstram a profundidade da plataforma — e cobrem cada uma das frentes que mapeamos para a Algar.</p>
 
@@ -1077,7 +998,7 @@ footer .sources{max-width:840px;margin:20px auto 0;font-size:11px;color:rgba(255
 <!-- MARKET -->
 <section class="section market" id="market">
   <div class="section-inner">
-    <div class="eyebrow">07 — O mercado já provou</div>
+    <div class="eyebrow">06 — O mercado já provou</div>
     <h2>IA conversacional não é tendência futura — é <em>eficiência operacional</em> mensurável.</h2>
     <p class="section-lede">Os números abaixo, de fontes independentes, sustentam o business case da transformação conversacional na Algar — e fortalecem exatamente a narrativa que a nova presidente Eliane já defende publicamente: cliente no centro, eficiência operacional como sobrevivência.</p>
 
@@ -1132,7 +1053,7 @@ footer .sources{max-width:840px;margin:20px auto 0;font-size:11px;color:rgba(255
   <div class="cta-inner">
     <div class="eyebrow">Próximo passo</div>
     <h2>Vamos construir a operação inteligente da Algar — com a <em>conversa no centro</em> da estratégia.</h2>
-    <p>A base existe, o mercado já provou o retorno e os casos de uso estão mapeados. O momento de transformar SAC, cobrança e campo em jornadas orquestradas por IA é agora — antes da RFP, na próxima reunião técnica.</p>
+    <p>A base existe, o mercado já provou o retorno e os casos de uso estão mapeados. O momento de transformar SAC, cobrança e campo em jornadas orquestradas por IA é agora.</p>
     <a href="https://wa.me/5511942412132?text=Ol%C3%A1%20Thiago%2C%20quero%20conversar%20sobre%20o%20projeto%20de%20orquestra%C3%A7%C3%A3o%20conversacional%20da%20Algar%20com%20a%20Blip." class="cta-btn" target="_blank">
       <span>💬</span><span>Falar com Thiago Gomes</span>
     </a>
