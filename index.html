@@ -105,6 +105,105 @@ body{
   70%{box-shadow:0 0 0 14px rgba(0,150,250,0)}
   100%{box-shadow:0 0 0 0 rgba(0,150,250,0)}
 }
+
+/* === GATEWAY DE SENHA === */
+body.locked{overflow:hidden;height:100vh}
+#gate{
+  position:fixed;inset:0;z-index:9999;
+  display:flex;align-items:center;justify-content:center;
+  padding:32px;
+  background:
+    radial-gradient(ellipse 80% 60% at 80% 20%, rgba(0,150,250,.18) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 80% at 10% 90%, rgba(0,72,182,.22) 0%, transparent 55%),
+    linear-gradient(180deg, #050823 0%, #0A0E27 50%, #0A0E27 100%);
+  transition:opacity .6s ease, visibility .6s ease;
+}
+#gate::before{
+  content:'';position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+  background-size:48px 48px;
+  mask-image:radial-gradient(ellipse at center, #000 30%, transparent 75%);
+  -webkit-mask-image:radial-gradient(ellipse at center, #000 30%, transparent 75%);
+  pointer-events:none;
+}
+#gate.unlocked{opacity:0;visibility:hidden;pointer-events:none}
+.gate-card{
+  position:relative;z-index:2;width:100%;max-width:440px;text-align:center;
+  animation:gateIn .8s cubic-bezier(.16,1,.3,1) both;
+}
+@keyframes gateIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.gate-brand{
+  display:inline-flex;align-items:center;gap:12px;color:#fff;
+  font-weight:500;font-size:17px;letter-spacing:-.01em;margin-bottom:40px;
+}
+.gate-brand .dot{width:6px;height:6px;border-radius:50%;background:var(--blip-blue)}
+.gate-brand .x{opacity:.4;margin:0 2px}
+.gate-lock{
+  width:64px;height:64px;border-radius:18px;margin:0 auto 28px;
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg, rgba(0,150,250,.16), rgba(0,72,182,.10));
+  border:1px solid rgba(0,150,250,.22);
+}
+.gate-lock svg{width:26px;height:26px;stroke:var(--blip-blue)}
+.gate-eyebrow{
+  font-size:12px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(255,255,255,.55);margin-bottom:14px;
+}
+.gate-card h2{
+  font-size:clamp(24px,4vw,30px);font-weight:600;color:#fff;
+  letter-spacing:-.03em;line-height:1.12;margin-bottom:14px;
+}
+.gate-card h2 em{
+  font-style:normal;
+  background:linear-gradient(135deg,var(--blip-blue) 0%,#5BC4FF 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.gate-card p{
+  font-size:14px;color:rgba(255,255,255,.6);line-height:1.55;margin-bottom:34px;
+}
+.gate-field{position:relative;margin-bottom:16px}
+.gate-field input{
+  width:100%;padding:16px 18px;font-family:'Lexend',sans-serif;
+  font-size:15px;font-weight:400;color:#fff;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.12);border-radius:12px;
+  outline:none;transition:border-color .2s, background .2s, box-shadow .2s;
+  letter-spacing:.01em;
+}
+.gate-field input::placeholder{color:rgba(255,255,255,.32)}
+.gate-field input:focus{
+  border-color:var(--blip-blue);background:rgba(0,150,250,.06);
+  box-shadow:0 0 0 4px rgba(0,150,250,.12);
+}
+#gate.shake .gate-field{animation:shake .42s cubic-bezier(.36,.07,.19,.97)}
+@keyframes shake{
+  10%,90%{transform:translateX(-1px)}20%,80%{transform:translateX(2px)}
+  30%,50%,70%{transform:translateX(-5px)}40%,60%{transform:translateX(5px)}
+}
+.gate-btn{
+  width:100%;padding:16px;font-family:'Lexend',sans-serif;
+  font-size:15px;font-weight:600;color:#fff;cursor:pointer;
+  background:var(--blip-blue);border:none;border-radius:12px;
+  letter-spacing:-.01em;transition:background .2s, transform .15s;
+}
+.gate-btn:hover{background:#0080d6}
+.gate-btn:active{transform:scale(.98)}
+.gate-error{
+  font-size:13px;color:var(--warn);margin-top:14px;height:18px;
+  opacity:0;transition:opacity .2s;font-weight:400;
+}
+.gate-error.show{opacity:1}
+.gate-foot{
+  margin-top:38px;font-size:12px;color:rgba(255,255,255,.38);
+  display:flex;align-items:center;justify-content:center;gap:7px;
+}
+.gate-foot .pulse{
+  width:7px;height:7px;border-radius:50%;background:var(--blip-blue);
+  box-shadow:0 0 0 0 rgba(0,150,250,.6);animation:pulse 2s infinite;
+}
+
 .hero h1{
   font-size:clamp(38px,5.6vw,80px);
   font-weight:600;
@@ -568,7 +667,34 @@ footer .sources{max-width:840px;margin:20px auto 0;font-size:11px;color:rgba(255
 }
 </style>
 </head>
-<body>
+<body class="locked">
+
+<!-- GATEWAY DE SENHA -->
+<div id="gate">
+  <div class="gate-card">
+    <div class="gate-brand">
+      <span>blip<span class="dot"></span></span>
+      <span class="x">×</span>
+      <span>Algar</span>
+    </div>
+    <div class="gate-lock">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3.5" y="11" width="17" height="10" rx="2.2"/>
+        <path d="M7.5 11V7.5a4.5 4.5 0 0 1 9 0V11"/>
+        <circle cx="12" cy="16" r="1.3"/>
+      </svg>
+    </div>
+    <div class="gate-eyebrow">Acesso Restrito</div>
+    <h2>Visão Estratégica <em>Blip × Algar</em></h2>
+    <p>Documento confidencial de uso interno. Insira a senha para acessar a apresentação.</p>
+    <div class="gate-field">
+      <input type="password" id="gate-input" placeholder="Digite a senha" autocomplete="off" spellcheck="false" autofocus>
+    </div>
+    <button class="gate-btn" id="gate-btn">Acessar apresentação</button>
+    <div class="gate-error" id="gate-error">Senha incorreta. Tente novamente.</div>
+    <div class="gate-foot"><span class="pulse"></span>Confidencial · não distribuir</div>
+  </div>
+</div>
 
 <!-- NAV -->
 <nav class="nav">
@@ -1073,6 +1199,38 @@ footer .sources{max-width:840px;margin:20px auto 0;font-size:11px;color:rgba(255
     Métricas Algar (Ana, TAOS, Portal Empresas) extraídas de declarações públicas da própria operadora. Números de cases Blip de fontes oficiais dos clientes e repositório interno.
   </div>
 </footer>
+
+<script>
+(function(){
+  var PASS = "Algar&BlipVisao2030";
+  var gate  = document.getElementById('gate');
+  var input = document.getElementById('gate-input');
+  var btn   = document.getElementById('gate-btn');
+  var err   = document.getElementById('gate-error');
+
+  function unlock(){
+    gate.classList.add('unlocked');
+    document.body.classList.remove('locked');
+    setTimeout(function(){ if(gate && gate.parentNode){ gate.parentNode.removeChild(gate); } }, 650);
+  }
+  function fail(){
+    err.classList.add('show');
+    gate.classList.add('shake');
+    input.value = '';
+    setTimeout(function(){ gate.classList.remove('shake'); }, 450);
+  }
+  function check(){
+    if(input.value === PASS){ unlock(); } else { fail(); }
+  }
+
+  btn.addEventListener('click', check);
+  input.addEventListener('keydown', function(e){
+    if(e.key === 'Enter'){ check(); }
+    else { err.classList.remove('show'); }
+  });
+  input.focus();
+})();
+</script>
 
 </body>
 </html>
